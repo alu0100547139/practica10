@@ -3,6 +3,7 @@ Nodo = Struct.new(:value, :next, :prev)
 class Lista
 
 include Enumerable
+include Comparable
 
 	attr_accessor :head, :tail	
 
@@ -20,17 +21,16 @@ include Enumerable
 					@aux=@aux.next
 				end
 		end
-	
 	end
 	
 
 # Metodo para insertar por el principio
 
 	def push(nodo)
-		if(@head == nil)
+		#if(@head == nil)
 			@head=nodo
 			@tail=nodo
-		elsif (@head == @tail)
+		if (@head == @tail)
 			@tail=nodo
 			nodo.next = @head
 			@head.prev = nodo
@@ -40,8 +40,20 @@ include Enumerable
 			@tail=nodo
 		end
 		return true
+	
 	end
-
+	
+	def == (other)
+	    
+	  @head.value == @tail.value
+	          
+	end
+	
+	def <=> (other)
+		
+		@head.value <=> @tail.value
+		
+	end
 # Metodo para extraer por el principio 
 
 	def pop
@@ -62,6 +74,7 @@ include Enumerable
 		end
 	end
 	
+	
 # Metodo para extraer por el final
 	
 	def extract
@@ -77,6 +90,25 @@ include Enumerable
 			@head.next=nil
 			return true
 		end
+	end
+	
+	def sacar
+		if(@head == nil)
+			raise ArgumentError.new('No hay elementos para extraer')
+			@value = nil
+		
+		elsif(@head == @tail)
+			@value = @head
+			@tail=nil
+			@head=nil
+			
+		else
+			@value=@head
+			@head=@head.prev
+			@head.next=nil
+			
+		end
+		return @value
 	end
 	
 # Metodo para insertar por el final
@@ -97,5 +129,10 @@ include Enumerable
 		end
 		return true
 	end
+	
+	def ==(other) 
+		@head = other.head && @tail == other.tail
+	end
+		
 	
 end

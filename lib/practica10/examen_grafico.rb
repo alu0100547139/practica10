@@ -34,6 +34,19 @@ attr_accessor :lista, :bien , :mal
 		end
 
 	end
+	
+		def invertir_examen
+			
+			v1 = Lista.new()
+				@lista.each do |i|
+					v1.push(i)
+				end
+			@lista = v1
+			
+		end
+		
+	
+		
 
 
 	def mostrar_aprobado

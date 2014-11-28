@@ -16,7 +16,7 @@ attr_accessor :preg, :c, :dif, :a, :datos_user
 
     def to_s
         @aux = ""
-        @aux = @aux + "@a.each{ |i| print i}"
+        @aux = @aux + '@a.each{ |i| print i}'
         "(#{@preg},#{@aux})"
     end
 
@@ -34,7 +34,7 @@ attr_accessor :preg, :c, :dif, :a, :datos_user
 	    
 	def ==(other)
 	    
-	  @preg.size == other.preg.size && @preg == other.preg
+	    @preg.size == other.preg.size && @preg == other.preg
 	          
 	end
 	

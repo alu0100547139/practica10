@@ -11,7 +11,7 @@ describe Lista do
         @L1=Lista.new
         @P1=Sel_multiple.new("¿Cual es la salida del sig codigo ruby? ","c",["#<Xyz:0xa020302>","nil","0","ninguna"],'2')
 		@P2=Sel_simple.new("La siguiente definicion de un hash es valida?","c","1")
-		@P3=Sel_multiple.new("Cual es la salida del siguiente codigo=","c",["1","bob","Hey","Ninguna"],"2")
+		@P3=Sel_multiple.new("Cual es la salida del siguiente codigo=","c",["1","bob","Hey","Ninguna"],'2')
 		@P4=Sel_multiple.new("¿Cual es el tipo del objeto en el siguiente codigo Ruby?","c",["instancia de Class","Constante","Objeto","Ninguna"],"3")
         @P5=Sel_simple.new(" Es apropiado que una clase Tablero herede de una clase Juego","c","2")
        
