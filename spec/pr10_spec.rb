@@ -2,6 +2,7 @@
 require 'practica10.rb'
 require 'spec_helper.rb'
 require 'test/unit'
+#require 'coveralls.yml'
 
 
 
@@ -30,6 +31,18 @@ describe Lista do
 		@Exa=ExamenGR.new(@L1)  
 		
     end
+# Prueba para el metodo invertido
+
+		it " Existe un metodo para invertir un examen" do
+			@L2 = Lista.new
+			@L2.insert(@N5)
+    		@L2.insert(@N4)
+        	@L2.insert(@N3)
+        	@L2.insert(@N2)
+        	@L2.insert(@N1)
+			expect(@Exa.invertir_examen).to eq @L2
+		end
+
 
 # Pruebas para la clase Examen_Grafico.
 		it " Existe una clase examen" do
